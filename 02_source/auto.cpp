@@ -163,5 +163,7 @@ int main(int, char *[]) {
 	example_3();
 	example_4();
 
+
+	std::cin.get();
 	return 0;
 }

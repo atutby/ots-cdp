@@ -34,3 +34,6 @@ else ()
         -Wall -Wextra -pedantic -Werror
     )
 endif()
+
+
+# "-DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake"

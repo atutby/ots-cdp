@@ -26,9 +26,10 @@ int main(int, char *[]) {
 	std::cout << old << std::endl;
 
 	std::tie(sn, old) = foo(1, 2);
-
 	std::cout << sn << std::endl;
 	std::cout << old << std::endl;
-
+	
+	
+	std::cin.get();
 	return 0;
 }

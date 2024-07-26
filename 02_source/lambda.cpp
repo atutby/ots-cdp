@@ -51,7 +51,7 @@ void example_2() {
 struct Closure2 {
 	explicit Closure2(int z_) : z(z_){};
 
-	int operator()(int a, int b) {
+	int operator()(int a, int b) const {
 		return z + a + b;
 	}
 
@@ -61,8 +61,10 @@ struct Closure2 {
 // Middle
 void example_3() {
 	// [z=100] - capture with initialize (since C++14)
-	auto closure = [z = 100](int a, int b) { return z + a + b; };
+	auto closure = [z = 100](int a, int b) mutable -> decltype(a + b) {++z; return z + a + b; };
 	std::cout << closure(1, 2) << std::endl;
+
+	auto closure4 = closure; // может не скомпилироваться
 
 	auto closure2 = [](int a, int b, int c) {
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
@@ -128,5 +130,6 @@ int main() {
 	example_3();
 	example_4();
 
+	std::cin.get();
 	return 0;
 }

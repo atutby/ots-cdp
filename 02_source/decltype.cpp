@@ -98,5 +98,6 @@ int main() {
 	example_3();
 	example_4();
 
+	std::cin.get();
 	return 0;
 }
